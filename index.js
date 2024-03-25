@@ -14,23 +14,27 @@ document.addEventListener("DOMContentLoaded", function () {
   buttonsContainer.innerHTML = buttons.join("");
 });
 listEl.addEventListener("click", (e) => {
-    console.log(e.target);
-//   if (button.classList.contains("selected")) {
-//     button.classList.remove("selected");
-    
-//     const index = selectedButtons.indexOf(value.id);
-//     if (index > -1) {
-//       selectedButtons.splice(index, 1);
-//     }
-//   } else {
-//     button.classList.add("selected");
-    
-//     selectedButtons.push(value.id);
-//   }
-  
-//   localStorage.setItem("name-buttons", JSON.stringify(selectedButtons));
-});
+  const btn = e.target;
+  if (btn.tagName !== "BUTTON") {
+    return;
+  }
 
+  console.log(e.target.tagName === "BUTTON");
+    if (button.classList.contains("selected")) {
+      button.classList.remove("selected");
+
+      const index = selectedButtons.indexOf(value.id);
+      if (index > -1) {
+        selectedButtons.splice(index, 1);
+      }
+    } else {
+      button.classList.add("selected");
+
+      selectedButtons.push(value.id);
+    }
+
+    localStorage.setItem("name-buttons", JSON.stringify(selectedButtons));
+});
 
 // button.addEventListener("click", function () {
 //});
