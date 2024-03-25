@@ -3,5 +3,5 @@ export const createBtn = (btn, isSelected) => {
     <button class="${isSelected ? "selected" : ""}" data-id=${
     btn.id
   } type="button">${btn.name}</button>
-    <li>`;
+    </li>`;
 };
